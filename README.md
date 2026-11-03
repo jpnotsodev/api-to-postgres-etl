@@ -12,7 +12,7 @@ This project demonstrates how to build a simple ETL pipeline using Apache Airflo
 
 ## ETL Architecture
 
-![api-to-postgres-etl.png](images\api-to-postgres-etl.png)
+![api-to-postgres-etl.png](.\images\api-to-postgres-etl.png)
 
 ## Dataset Used in this Project 
 
