@@ -14,7 +14,7 @@ This project demonstrates how to build a simple ETL pipeline using Apache Airflo
 
 ![api-to-postgres-etl.png](https://github.com/jpnotsodev/api-to-postgres-etl/blob/change0/images/api-to-postgres-etl.png)
 
-## Dataset Used in this Project 
+## Dataset Used
 
 In this project, we are building a data pipeline that extracts data through an API call to [JSONplacehdoler](https://www.google.com). API calls are made using the `requests` module:
 
@@ -56,3 +56,11 @@ The resulting data is in JSON format, as shown below:
 * **Apache Airflow** - an open-source workflow management platform used to programmatically author, schedule, and monitor data engineering and batch processing using Python.
 * **Docker** - an open-sourcs virtualization software that packages applications and their dependencies into lightweight, portable units called containers.
 * **Python** - a high-level, general-purpose programming language known for its versatility, readability, simplicity and extensive ecosystem.
+
+## Build the Airflow image
+
+The custom image extends `apache/airflow:3.3.2` with Java 17, Apache Spark 3.5.7 (Hadoop 3 build), and the PostgreSQL Airflow provider. Build and start the local Compose stack with:
+
+```shell
+docker compose up --build
+```
