@@ -45,16 +45,6 @@ def load_data_to_postgres(**context) -> None:
     pg_hook = PostgresHook(postgres_conn_id=POSTGRES_CONN_ID)
     pg_conn = pg_hook.get_conn()
     pg_cursor = pg_conn.cursor()
-    # create table if not exists
-    pg_create_table_query = """CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY,
-        name TEXT,
-        username TEXT,
-        email TEXT,
-        phone TEXT,
-        website TEXT)"""
-    pg_cursor.execute(pg_create_table_query)
-    pg_conn.commit()
 
     pg_cursor.executemany("INSERT INTO users (id, name, username, email, phone, website) " \
         "VALUES (%s, %s, %s, %s, %s, %s) ON CONFLICT (id) DO " \
